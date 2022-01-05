@@ -1,0 +1,14 @@
+{
+  "name": "simple-tip3-token",
+  "version": "1.0.0",
+  "dependencies": {
+    "@tonclient/appkit": "^0.3.0",
+    "@tonclient/core": "^1.27.1",
+    "@tonclient/lib-node": "^1.27.1"
+  },
+  "scripts": {
+    "build": "mkdir -p artifacts && tondev sol compile -o ./artifacts contracts/Root.sol",
+    "wrapjs": "tondev js wrap ./artifacts/Root.abi.json",
+    "test": "npm run build && npm run wrapjs && node test.js"
+  }
+}
